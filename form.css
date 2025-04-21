@@ -1,0 +1,433 @@
+/* Progress Bar */
+.progress-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md) var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+    background-color: var(--color-background);
+  }
+  
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    width: 33.33%;
+  }
+  
+  .step-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-background);
+    border: 2px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-xs);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .step-number {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    transition: opacity 0.3s ease;
+  }
+  
+  .step-check {
+    position: absolute;
+    opacity: 0;
+    color: white;
+    transition: opacity 0.3s ease;
+  }
+  
+  .step.active .step-icon {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+  
+  .step.active .step-number {
+    color: white;
+  }
+  
+  .step.completed .step-icon {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+  
+  .step.completed .step-number {
+    opacity: 0;
+  }
+  
+  .step.completed .step-check {
+    opacity: 1;
+  }
+  
+  .step-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-align: center;
+    transition: color 0.3s ease;
+  }
+  
+  .step.active .step-label, .step.completed .step-label {
+    color: var(--color-text-primary);
+    font-weight: 600;
+  }
+  
+  .step-connector {
+    height: 2px;
+    flex: 1;
+    background-color: var(--color-border);
+    margin: 0 -10px;
+    margin-top: -46px;
+    z-index: 0;
+    position: relative;
+  }
+  
+  .step.completed + .step-connector {
+    background-color: var(--color-accent);
+  }
+  
+  /* Form Sections */
+  .form-section-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .form-section {
+    padding: var(--space-lg);
+    display: none;
+  }
+  
+  .form-section.active {
+    display: block;
+    animation: fadeIn 0.5s ease forwards;
+  }
+  
+  .form-description {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+  }
+  
+  /* Form Layout */
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+  }
+  
+  .form-group {
+    margin-bottom: var(--space-sm);
+  }
+  
+  /* Input Styles */
+  .input-container {
+    position: relative;
+    margin-bottom: var(--space-sm);
+  }
+  
+  .input-container input, .input-container select {
+    display: block;
+    width: 100%;
+    padding: var(--space-sm) var(--space-xs);
+    padding-top: 22px;
+    padding-bottom: 10px;
+    border: 1px solid var(--color-input-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-input-background);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    height: 56px;
+  }
+  
+  .input-container input:focus, .input-container select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.2);
+  }
+  
+  .input-container label {
+    position: absolute;
+    top: 18px;
+    left: var(--space-xs);
+    font-size: 1rem;
+    color: var(--color-text-tertiary);
+    pointer-events: none;
+    transition: all 0.2s ease;
+  }
+  
+  .input-container input:focus ~ label,
+  .input-container input:not(:placeholder-shown) ~ label,
+  .input-container select:focus ~ label,
+  .input-container select:not([value=""]):not(:focus) ~ label {
+    top: 8px;
+    font-size: 0.75rem;
+    color: var(--color-primary);
+  }
+  
+  .input-container.has-error input,
+  .input-container.has-error select {
+    border-color: var(--color-error);
+  }
+  
+  .input-container.has-error label {
+    color: var(--color-error);
+  }
+  
+  .error-message {
+    font-size: 0.75rem;
+    color: var(--color-error);
+    margin-top: var(--space-xxs);
+    min-height: 18px;
+  }
+  
+  /* Select Styling */
+  .select-container select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+  }
+  
+  .select-container::after {
+    content: "";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--color-text-tertiary);
+    pointer-events: none;
+  }
+  
+  /* Checkbox Styling */
+  .save-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-sm);
+  }
+  
+  .save-info input[type="checkbox"] {
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--color-input-border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .save-info input[type="checkbox"]:checked {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+  
+  .save-info input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 7px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
+  .save-info label {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+  }
+  
+  /* Form Actions */
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-lg);
+  }
+  
+  /* Credit Card Icons */
+  .card-icon-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: var(--space-xs);
+    z-index: 1;
+  }
+  
+  .card-icons {
+    display: flex;
+    gap: var(--space-xxs);
+  }
+  
+  .card-icon {
+    width: 32px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+  }
+  
+  .card-icon.active {
+    opacity: 1;
+  }
+  
+  .card-icon.visa {
+    background-image: url('https://cdn.jsdelivr.net/gh/creativetimofficial/public-assets/master/soft-ui-design-system-pro/assets/img/logos/visa.png');
+  }
+  
+  .card-icon.mastercard {
+    background-image: url('https://cdn.jsdelivr.net/gh/creativetimofficial/public-assets/master/soft-ui-design-system-pro/assets/img/logos/mastercard.png');
+  }
+  
+  .card-icon.amex {
+    background-image: url('https://cdn.jsdelivr.net/gh/creativetimofficial/public-assets/master/soft-ui-design-system-pro/assets/img/logos/mastercard.png');
+  }
+  
+  .card-icon.discover {
+    background-image: url('https://cdn.jsdelivr.net/gh/creativetimofficial/public-assets/master/soft-ui-design-system-pro/assets/img/logos/visa.png');
+  }
+  
+  /* Order Summary */
+  .order-summary {
+    margin-top: var(--space-lg);
+    padding: var(--space-md);
+    background-color: var(--color-background);
+    border-radius: var(--radius-md);
+  }
+  
+  .order-summary h3 {
+    margin-top: 0;
+    margin-bottom: var(--space-sm);
+    font-size: 1.125rem;
+  }
+  
+  .order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-xs) 0;
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .order-total {
+    display: flex;
+    justify-content: space-between;
+    padding-top: var(--space-sm);
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+  
+  /* Confirmation Section */
+  .confirmation-content {
+    text-align: center;
+    padding: var(--space-xl) var(--space-lg);
+  }
+  
+  .success-animation {
+    margin-bottom: var(--space-lg);
+  }
+  
+  .confirmation-details {
+    background-color: var(--color-background);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    margin: var(--space-lg) 0;
+    text-align: left;
+  }
+  
+  .confirmation-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-xs) 0;
+    font-size: 0.875rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .confirmation-item:last-child {
+    border-bottom: none;
+  }
+  
+  .confirmation-item span:first-child {
+    color: var(--color-text-secondary);
+  }
+  
+  .confirmation-item span:last-child {
+    font-weight: 500;
+  }
+  
+  #returnHome {
+    margin: var(--space-md) auto 0;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .progress-bar {
+      padding: var(--space-sm) var(--space-md);
+    }
+    
+    .form-section {
+      padding: var(--space-md);
+    }
+    
+    .form-row {
+      grid-template-columns: 1fr;
+      gap: var(--space-xs);
+    }
+    
+    .form-actions {
+      flex-direction: column-reverse;
+      gap: var(--space-sm);
+    }
+    
+    .form-actions button {
+      width: 100%;
+    }
+    
+    .save-info {
+      width: 100%;
+      margin-top: var(--space-sm);
+    }
+    
+    .step-label {
+      font-size: 0.75rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .progress-bar {
+      padding: var(--space-xs) var(--space-sm);
+    }
+    
+    .step-icon {
+      width: 28px;
+      height: 28px;
+    }
+    
+    .step-number {
+      font-size: 0.75rem;
+    }
+    
+    .step-label {
+      font-size: 0.7rem;
+    }
+  }
