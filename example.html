@@ -1,0 +1,92 @@
+<style>
+  .slider-navbar {
+      width: 300px; /* Narrower for vertical layout */
+      height: 100vh; /* Full viewport height */
+      position: fixed;
+      top: 0;
+      left: -300px; /* Start off-screen */
+      background-color: #333;
+      padding: 20px 0;
+      transition: left 0.3s ease-in-out;
+      z-index: 1000;
+      color: white;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+      overflow-y: auto; /* Enable scrolling if needed */
+  }
+  
+  .navbar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px 20px;
+      border-bottom: 1px solid #444;
+      margin-bottom: 20px;
+  }
+  
+  .nav-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+  
+  .nav-links li {
+      padding: 0;
+  }
+  
+  .nav-links a {
+      display: block;
+      color: #aaa;
+      text-decoration: none;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 18px;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      padding: 15px 30px;
+      border-left: 4px solid transparent;
+  }
+  
+  .nav-links a:hover {
+      color: white;
+      background-color: rgba(255,255,255,0.1);
+      border-left: 4px solid #aaa;
+      padding-left: 26px; /* Compensate for border */
+  }
+  
+  #closeNavbar {
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      padding: 5px;
+  }
+  
+  .menu-icon {
+      position: fixed;
+      font-size: 30px;
+      cursor: pointer;
+      padding: 10px;
+      top: 10px;
+      left: 10px;
+      z-index: 1001;
+      background-color: #333;
+      color: white;
+      border-radius: 5px;
+  }
+  </style>
+  
+  <!-- HTML Structure -->
+  <div class="menu-icon" id="toggleNavbar">☰</div>
+  
+  <nav class="slider-navbar" id="sliderNavbar">
+      <div class="navbar-header">
+          <h2 style="font-size: 20px;">MENU</h2>
+          <button id="closeNavbar">×</button>
+      </div>
+      <ul class="nav-links">
+          <li><a href="gallery.html">GALLERY</a></li>
+          <li><a href="intro.html">ARTIST</a></li>
+          <li><a href="#About">ABOUT</a></li>
+          <li><a href="upcoming.html">UPCOMING</a></li>
+      </ul>
+  </nav>
