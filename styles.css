@@ -1,0 +1,1009 @@
+.mouse-scroll {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+  margin-top:-300px
+}
+
+.mouse {
+	width: 48px;
+	height: 80px;
+	border: 4px solid #fff;
+	border-radius: 24px;
+	display: flex;
+	justify-content: center;
+	align-items: start;
+}
+
+.arrow {
+	width: 10px;
+	height: 10px;
+	border-right: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+	transform: rotate(225deg);
+}
+
+.wheel {
+	width: 8px;
+	height: 16px;
+	background-color: #fff;
+	border-radius: 4px;
+	animation: scroll 1s infinite;
+	margin-top: 8px;
+}
+
+/* Scroll animation */
+@keyframes scroll {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(8px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.popup {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	padding: 30px;
+	margin: 30px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	z-index: 1000;
+	max-width: 500px;
+	text-align: center;
+	font-family: Arial, sans-serif;
+}
+.h2 {
+	font-family:'Courier New', Courier, monospace;
+	font-size: 20px;
+	font-weight: 100;
+}
+/* Overlay */
+.overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 999;
+}
+
+/* Close button */
+.close-btn {
+	background-color: #007BFF;
+	color: white;
+	padding: 12px 24px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 20px;
+}
+
+.close-btn:hover {
+	background-color: #0056b3;
+}
+.menu-icon {
+	position: absolute;
+	overflow: hidden;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+}
+.h1  {
+	position: absolute;
+	font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-size: 40px;
+	top:50px;
+	height:80px;
+	width: 600px;
+	left:20%;
+	border: none;
+	color: rgb(36, 4, 115);
+}
+.menu {
+	font-size: 20px;
+	left:50px;
+	top:20px;
+	color: #aaa;
+	font-family: 'Courier New', Courier, monospace;
+	word-spacing: 20px;
+}
+nav {top:0px;
+	font-family: 'Courier New', Courier, monospace;
+	position: fixed;
+	height: 18.4vh;
+	text-align:center;
+	left: 0px;
+	width: 3.5rem;
+	background: #2d2c2c;
+	overflow: hidden;
+	transition: width 0.3s ease;
+  }
+  nav:hover, nav.pinned {
+	width:10rem;
+  }
+  nav #logo {
+	background: #ff6600;
+	height: 1rem;
+	line-height: 4rem;
+	padding-left: 0rem;
+  }
+  nav a {
+	left: 0px;
+	color: #EEE;
+	text-decoration: none;
+	display: table;
+	width: 10rem;
+  }
+  nav a.active .fa {
+	left: 0px;
+	border-left: 0px solid #f60;
+	border-right: 3px solid transparent;
+  }
+  nav a:hover {
+	background: #444;
+	color: #BEE0ff;
+  }
+  nav a .fa {
+	width: 4rem;
+	left: 0px;
+	font-size: 2rem;
+	padding: 10px 0;
+	text-align: center;
+  }
+  nav a.label {
+	display: table-cell;
+  }
+	
+
+	.show-menu {
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-decoration: none;
+		color: #fff;
+		background: #19c589;
+		text-align: center;
+		padding: 10px 0;
+		display: none;
+	}
+	
+	/*Hide checkbox*/
+	input[type=checkbox]{
+		display: none;
+	}
+	
+	input[type=checkbox]:checked ~ #menu{
+		display: block;
+	}
+	
+	
+	/*Responsive Styles*/
+	
+	@media screen and (max-width : 760px){
+		/*Make dropdown links appear inline*/
+		ul {
+			position: static;
+			display: none;
+		}
+		/*Create vertical spacing*/
+		li {
+			margin-bottom: 1px;
+		}
+		/*Make all menu links full width*/
+		ul li, li a {
+			width: 100%;
+		}
+		/*Display 'show menu' link*/
+		.show-menu {
+			display:block;
+		}
+	}
+	
+
+.i {
+    height:70px;
+    width:50px;
+    position: absolute;
+    top:10px;
+    border: 0px;
+}
+.backgroundimg {
+	position: absolute;
+	overflow: visible;
+	border: none;
+	background-color:white;
+	color:white;
+	height:300px;
+	top:550px;
+	right:500px;
+	width: 300px;
+}
+.backgroundimg1{
+	position: absolute;
+	overflow: visible;
+	border: none;
+	background-color:white;
+	color:white;
+	height:300px;
+	top:550px;
+	right:270px;
+	width: 550px;
+}
+.backgroundimg2{
+	position: absolute;
+	overflow: visible;
+	border: none;
+	background-color:white;
+	color:white;
+	height:700px;
+	top:230px;
+	right:-50px;
+	width: 350px;
+}
+.backgroundimg3{
+	position: absolute;
+	overflow: visible;
+	border: none;
+	background-color:white;
+	color:white;
+	height:600px;
+	left:-20px;
+	top:300px;
+	right:500px;
+	width:800px;
+}
+.backgroundimg4{
+	position: absolute;
+	overflow: visible;
+	border: none;
+	background-color:white;
+	color:white;
+	height:250px;
+	left:-10px;
+	top:120px;
+	right:500px;
+	width:170px;
+}
+.backgroundimg5{
+	position: absolute;
+	overflow: visible;
+	border: none;
+	background-color:white;
+	color:white;
+	height:400px;
+	top:-170px;
+	right:0px;
+	width: 700px;
+}
+.backgroundimg6{
+	position: absolute;
+	overflow: visible;
+	border: none;
+	background-color:white;
+	color:white;
+	height:300px;
+	top:-130px;
+	left:160px;
+	width: 200px;
+}
+body,
+.container {position: absolute;
+	top:150px;
+	transform: translate3d(0, 0, 0); 
+	will-change: transform;
+  display: flex;
+  top:100px;
+	flex-direction: column;
+	justify-content: center; /* Correct syntax for URL * /* Optional: makes sure the image covers the entire area */
+    background-position: center; /* Optional: centers the image */
+    height: 500px; /* Set the desired height */
+    width: 100%;
+}
+.frame1 {
+    position: absolute;
+    top: 150px; 
+	width:300px;    /* Extend upwards */
+    bottom: -50px;  /* Extend downwards */
+    left: -50px;    /* Extend to the left */
+    right: -50px;   /* Extend to the right */
+    background: transparent; /* Overlay should be transparent */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: rgb(255, 255, 255);
+		overflow: hidden;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+top:30px;
+	--width: 1400px;
+	--height: 500px;
+	--variable-length: 31500px;
+	--length: 21900px;
+	--half-length: calc(var(--length) / 2);
+}
+/* Controls */
+.controls {
+	margin-bottom: 20px;
+	color: white;
+	font-family: "Bebas Neue", sans-serif;
+	font-size: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: absolute;
+	z-index: 999;
+	top: 90px;
+}
+
+.range-slider {
+	width: 300px;
+}
+
+.container {position: absolute;
+	top: -30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	transform: scale(1);
+	transform-origin: center;
+}
+
+.cube {
+	perspective: 800px;
+	perspective-origin: 50% 50%;
+	position: relative;
+	width: var(--width);
+	height: var(--height);
+	transform-style: preserve-3d;
+	transition: transform 0.3s ease-out;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	will-change: transform;
+  transform: translateZ(25000px)
+}
+
+.face {
+	position: absolute;
+	width: var(--width);
+	height: var(--height);
+	background: rgb(148, 36, 36);
+	border: none;
+	display: flex;
+	cursor: pointer;
+	align-items: center;
+	font-family: "Bebas Neue", sans-serif;
+	color: rgb(105, 30, 30);
+	will-change: transform;
+}
+
+.front {
+	transform: translateZ(calc(var(--length) - var(--variable-length)));
+	background-size: 500px;
+	background-blend-mode: difference;
+}
+
+.front.main {
+	transform: translateZ(calc(var(--length) - var(--variable-length)));
+	background-size: 500px;
+	background-color: transparent;
+	opacity: 1; 
+	transition: opacity 5s ease-in-out; 
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.front.main.hidden {
+	opacity: 0.6; 
+}
+
+.back {
+    transform: translateZ(calc(-1 * var(--variable-length))) rotateY(180deg) scale(-1, 1);
+    background-image: url('francesco-zivoli--qM5L01LIMU-unsplash.jpg');
+    background-size: cover;
+    background-position: center; 
+    height: 600px;
+    width: 1400px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+
+.left {
+	transform: translateZ(calc(var(--half-length) - var(--variable-length)))
+		translateX(calc(-1 * var(--half-length))) rotateY(-90deg) scale(-1, 1);
+	background: rgb(88, 34, 34);
+	width: var(--length);
+	background-image: url('pexels-834934396-20818840.jpg');
+
+}
+
+.right {
+	
+	transform-style: preserve-3d; 
+	image-rendering: crisp-edges; 
+	transform: translateZ(calc(var(--half-length) - var(--variable-length)))
+		translateX(calc(-1 * (var(--half-length) - var(--width)))) rotateY(90deg)
+		scale(-1, 1);
+	background: rgba(255, 255, 0, 1);
+	width: var(--length);
+	background-image: url('pexels-834934396-20818840.jpg');
+	background-image: repeat;
+	cursor: pointer;
+
+
+}
+
+.top {
+	transform: translateZ(calc(var(--half-length) - var(--variable-length)))
+		translateY(calc(-1 * var(--half-length))) rotateX(90deg) scale(1, -1);
+		background-image: url('wilhelm-gunkel-VPkvgjSgJnc-unsplash.jpg');
+	height: var(--length);
+
+}
+
+.bottom {
+	transform: translateZ(calc(var(--half-length) - var(--variable-length)))
+		translateY(calc(-1 * (var(--half-length) - var(--height)))) rotateX(-90deg)
+		scale(1, -1);
+	height: var(--length);
+	image-rendering: auto;
+	will-change: transform;
+  background: url("pexels-yamako-terapie-dzwiekiem-68268677-9648468.jpg");
+  background-size: 600px
+}
+
+
+
+p {
+	font-size: 7em;
+	transform: translateZ(0);
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	position: absolute;
+}
+
+.left p {
+	line-height: 1;
+	color: white;
+}
+
+.title {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 2em;
+	color: white;
+	background: none;
+	margin-top: 10%;
+}
+
+.title p {
+	font-size: 3em;
+	text-align: center;
+	line-height: 0.7;
+}
+
+.face img {
+	image-rendering: auto; 
+	transform: translateZ(0); 
+	will-change: transform; 
+	backface-visibility: visible; 
+	-webkit-backface-visibility: visible; 
+}
+
+img.left-align {
+	object-position: left;
+}
+img.right-align {
+	object-position: right;
+}
+img.top-align {
+	object-position: top;
+}
+img.bottom-align {
+	object-position: bottom;
+}
+
+.cube,
+.face,
+.frame,
+p {
+	transform-style: preserve-3d; 
+	will-change: transform; 
+}
+
+.archean {
+	transform: translateZ(calc((var(--length) * 0.987) - var(--variable-length)));
+}
+.cambrian {
+	transform: translateZ(
+		calc((var(--length) * 0.83076) - var(--variable-length))
+	);
+}
+.ordovician {
+	transform: translateZ(
+		calc((var(--length) * 0.74677) - var(--variable-length))
+	);
+	cursor: pointer;
+}
+.silurian {
+	transform: translateZ(
+		calc((var(--length) * 0.68277) - var(--variable-length))
+	);
+}
+.devonian {
+	transform: translateZ(
+		calc((var(--length) * 0.64492) - var(--variable-length))
+	);
+}
+.carboniferous {
+	transform: translateZ(
+		calc((var(--length) * 0.55215) - var(--variable-length))
+	);
+}
+.permian {
+	transform: translateZ(
+		calc((var(--length) * 0.45985) - var(--variable-length))
+	);
+}
+.triassic {
+	transform: translateZ(
+		calc((var(--length) * 0.38679) - var(--variable-length))
+	);
+}
+.jurassic {
+	transform: translateZ(
+		calc((var(--length) * 0.30969) - var(--variable-length))
+	);
+}
+.cretaceous {
+	transform: translateZ(
+		calc((var(--length) * 0.22308) - var(--variable-length))
+	);
+}
+.paleogene {
+	transform: translateZ(
+		calc((var(--length) * 0.10154) - var(--variable-length))
+	);
+}
+.neogene {
+	transform: translateZ(
+		calc((var(--length) * 0.035384) - var(--variable-length))
+	);
+}
+.quaternary {
+	transform: translateZ(
+		calc((var(--length) * 0.003981) - var(--variable-length))
+	);
+}
+
+.frame {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	border: solid 10px #191919;
+	width: 200px;
+	height: 150px;
+	margin: 40px auto;
+	box-shadow: 0px 10px 10px #000;
+}
+
+.border {
+	width: 200px;
+	height: 150px;
+	position: relative;
+	padding: 0;
+	margin: 0;
+	border: solid 25px #f5f5f5;
+}
+
+.frame1 {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	border: solid 10px #191919;
+	width: 130px;
+	height: 100px;
+	margin: 40px auto;
+	box-shadow: 0px 10px 10px #000;
+}
+
+.border1 {
+	width: 130px;
+	height: 100px;
+	position: relative;
+	padding: 0;
+	margin: 0;
+	border: solid 25px #f5f5f5;
+}
+.sketch1 {
+	width: 70px;
+	height: 80px;
+}
+
+.frame2 {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	right:50px;
+	border: solid 10px #191919;
+	width: 270px;
+	height: 170px;
+	margin: 40px auto;
+	box-shadow: 0px 10px 10px #000;
+}
+
+.border2 {
+	width: 270px;
+	height: 170px;
+	right:50px;
+	position: relative;
+	padding: 0;
+	margin: 0;
+	border: solid 25px #f5f5f5;
+}
+
+.border4 {
+	width: 270px;
+	height: 170px;
+	left:50px;
+	top:220px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	border: solid 25px #f5f5f5;
+}
+img {
+	display: block;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	border-top: solid 2px #aaa;
+	border-left: solid 2px #aaa;
+	border-bottom: solid 2px #ccc;
+	border-right: solid 2px #ccc;
+	object-fit: cover;
+	background: #ccc;
+}
+
+.sk1 {
+	left: 7%;
+	cursor: pointer;
+}
+.sk2{
+	left: 12%;
+	cursor: pointer;
+}
+.sk3 {
+	left: 17%;
+	cursor: pointer;
+}
+.sk4 {
+	left: 22%;
+	cursor: pointer;
+}
+
+.sk5 {
+	left: 27%;
+	cursor: pointer;
+}
+.sk6 {
+	left: 32%;
+	cursor: pointer;
+}
+
+.sk7{
+	left: 37%;
+	cursor: pointer;
+}
+
+.sk8 {
+	left: 42%;
+	cursor: pointer;
+}
+
+.sk9 {
+	left: 47%;
+	cursor: pointer;
+}
+.sk10 {
+	left: 52%;
+	cursor: pointer;
+}
+
+.sk11 {
+	left: 57%;
+	cursor: pointer;
+}
+.sk12 {
+	left: 62%;
+	cursor: pointer;
+}
+.sk13 {
+	left: 67%;
+	cursor: pointer;
+}
+
+.sk14 {
+	left: 72%;
+	cursor: pointer;
+}
+.sk15 {
+	left: 77%;
+	cursor: pointer;
+}
+
+.sk16 {
+	left: 82%;
+	cursor: pointer;
+}
+.sk17 {
+	left: 87%;
+	cursor: pointer;
+}
+
+.sk18 {
+	left: 92%;
+	cursor: pointer;
+}
+.sk19 {
+	left: 97%;
+	cursor: pointer;
+}
+
+
+.sk29 {
+	left:2%;
+}
+.cyanobacteria {
+	right: 2%;
+}
+.algae {
+	right: 7%;
+}
+.sponge {
+	right: 12%;
+}
+.jellyfish {
+	right: 17%;
+}
+.trilobite {
+	right: 22%;
+}
+.anomalocaris {
+	right: 27%;
+}
+.haikouichthys {
+	right: 32%;
+}
+.endoceras {
+	right: 37%;
+}
+.aegirocassis {
+	right: 42%;
+}
+.cooksonia {
+	right: 47%;
+}
+.tiktaalik {
+	right: 52%;
+}
+.dunkleosteus {
+	right: 57%;
+}
+.bothriolepis {
+	right: 62%;
+}
+
+.carbonodraco {
+	right: 67%;
+}
+.petrolacosaurus {
+	right: 72%;
+}
+.spinoaequalis {
+	right: 77%;
+}
+.arthropleura {
+	right: 82%;
+}
+.lepidodendrales {
+	right: 87%;
+}
+.seed-fern {
+	right: 92%;
+}
+
+.dimetrodon {
+	right: 97%;
+}
+.pareiasaurus {
+	right: 102%;
+}
+.claudiosaurus {
+	right: 59%;
+}
+
+.staurikosaurus {
+	right: 62%;
+}
+.plateosaurus {
+	right: 63%;
+}
+.lystrosaurus {
+	right: 64%;
+}
+.tanystropheus {
+	right: 65%;
+}
+.morganucodon {
+	right: 66%;
+}
+.gobiconodon {
+	right: 67%;
+}
+
+.ankylosaurus {
+	right: 71%;
+}
+.pachyrhinosaurus {
+	right: 72%;
+}
+.suzhousaurus {
+	right: 73%;
+}
+.gigantoraptor {
+	right: 74%;
+}
+.archaeopteryx {
+	right: 75%;
+}
+
+.sagaria {
+	right: 80%;
+}
+.purgatorius {
+	right: 82%;
+}
+.ningchengopterus {
+	right: 84%;
+}
+.argentinosaurus {
+	right: 86%;
+}
+
+.moeritherium {
+	right: 91%;
+}
+.paraceratherium {
+	right: 93%;
+}
+
+.megatherium {
+	right: 97%;
+}
+.deinotherium {
+	left: 98%;
+}
+.daeodon {
+	right: 99%;
+}
+
+.border div {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	font-size: 1.7em;
+	line-height: 1.2;
+	margin-top: 50px;
+	color: white;
+}
+
+#zRange {
+	display: none;
+}
+
+#zValue {
+	font-size: 3em;
+}
+
+.hidden {
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 1s ease; 
+}
+
+.visible {
+	opacity: 0;
+	pointer-events: auto;
+	transition: opacity 1s ease; 
+}
+
+small {
+	font-size: 0.6em;
+	margin-top: -100px;
+}
+
+
+
+
+.arrow {
+	width: 10px;
+	height: 10px;
+	border-right: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+	transform: rotate(225deg);
+}
+
+
+/* Scroll animation */
+@keyframes scroll {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(8px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+  h3{
+	font-size:25px;
+	font-family: 'Abel', sans-serif;
+	color:rgb(255,255,255);
+	text-shadow: 0 0 2px rgb(255,255,255);
+	transform: translatey(10px);
+  }
+  
+  p{
+	
+	font-family: 'Abel', sans-serif;
+	color: white;
+	text-align:center;
+	width:220px;
+	transform: translatex(12px);
+  }
+
+  .newyork_public:hover ~ * > * > * > wall1 > * > p {
+	transform: translate3d(0, 5rem, 0) scale(1);
+	width: 30rem;
+  }
+
+
